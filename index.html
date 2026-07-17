@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>AnimeSaku - Nonton & Download Anime Sub Indo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo" onclick="goHome()">AnimeSaku</div>
+      <nav class="nav-menu">
+        <a class="nav-link active" onclick="goHome()">Home</a>
+        <a class="nav-link" onclick="goPage('animelist')">AnimeList</a>
+        <a class="nav-link" onclick="goPage('jadwal')">Jadwal</a>
+      </nav>
+      <div class="search-box">
+        <input type="text" placeholder="Search..." id="search">
+      </div>
+    </div>
+  </header>
 
+  <div class="container">
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page active">
+      <div class="main">
+        <div class="content">
+          <div class="box">
+            <div class="box-title">Update Anime Terbaru</div>
+            <div class="grid" id="latestGrid"></div>
+            <div class="pagination" id="latestPagination"></div>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="box">
+            <div class="box-title">Sedang Tayang</div>
+            <div class="anime-list" id="ongoingList"></div>
+          </div>
+          <div class="box">
+            <div class="box-title">Genre</div>
+            <div class="genre-list" id="genreList"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ANIMELIST PAGE -->
+    <div id="animelistPage" class="page">
+      <div class="main">
+        <div class="content">
+          <div class="box">
+            <div class="box-title">Daftar Anime A-Z</div>
+            <div class="grid" id="allGrid"></div>
+            <div class="pagination" id="allPagination"></div>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="box">
+            <div class="box-title">Filter Genre</div>
+            <div class="genre-list" id="genreFilterList"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+
+    <!-- JADWAL PAGE -->
+    <div id="jadwalPage" class="page">
+      <div class="box">
+        <div class="box-title">Jadwal Rilis Mingguan</div>
+        <div class="jadwal-grid" id="jadwalDays"></div>
+        <div class="jadwal-list" id="jadwalList"></div>
+      </div>
+    </div>
+
+    <!-- SEARCH PAGE -->
+<div id="searchPage" class="page">
+  <div class="main">
+    <div class="content">
+      <div class="box">
+        <div class="box-title" id="searchTitle">Hasil Pencarian</div>
+        <div class="grid" id="searchGrid"></div> <!-- ini ngikutin.grid kamu -->
+        <div id="searchNotFound"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WATCH PAGE -->
+<div id="watchPage" class="watch-page">
+  <div class="container"> <!-- TAMBAH BUNGKUS INI -->
+    <span class="back" onclick="goHome()">« Kembali</span>
+    <div class="breadcrumb" id="breadcrumb"></div>
+    <h2 id="watchTitle" style="margin-bottom:15px;"></h2>
+    <div class="player-wrap">
+      <iframe id="player" src="" allow="autoplay" allowfullscreen></iframe>
+    </div>
+    <div class="box">
+      <div class="box-title">Daftar Episode</div>
+      <div class="ep-list" id="epList"></div>
+    </div>
+    <div class="box" style="margin-top:15px">
+      <div class="box-title">Sinopsis</div>
+      <div class="sinopsis-text" id="sinopsisText" style="padding:15px; font-size:13px; line-height:1.6; color:var(--text-dim)">Loading...</div>
+    </div>
+    <div class="box" style="margin-top:15px">
+      <div class="box-title">Download Episode</div>
+      <div class="download-box">
+        <div class="dl-info">⚠️ Link download dari server pihak ke-3.</div>
+        <div class="dl-grid" id="downloadList"></div>
+      </div>
+    </div>
+  </div> <!-- TUTUP CONTAINER -->
+</div>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      AnimeSaku © 2026 | Nonton Anime Subtitle Indonesia. <br>
+      Hanya Website FanShare.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
